@@ -1,4 +1,7 @@
 ---
+import Header from '../components/global/Header.astro';
+import Footer from '../components/global/Footer.astro';
+import Hero from '../components/global/Hero.astro';
 interface Props {
   pageTitle: string;
 }
@@ -13,7 +16,12 @@ const { pageTitle } = Astro.props;
     <meta name='generator' content={Astro.generator} />
     <title>{pageTitle}</title>
   </head>
-  <body>
+  <body class="flex flex-col h-screen">
+    <Header />
+    <Hero />
+    <main class="bg-stone-50 flex-1">
     <slot />
+    </main>
+    <Footer />
   </body>
 </html>
